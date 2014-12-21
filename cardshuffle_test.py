@@ -42,15 +42,20 @@ class TestShuffler(unittest.TestCase): # pylint: disable=R0904
         
     def test_play(self):
         '''
-        Test the CardShuffle game API as a whole.  :py:CardShuffle.play takes
-        the number of cards in the game and returns the number of rounds in
-        the game'''
-        game = cardshuffle.Shuffler()
-        self.assertEqual(game.play(0), 0)
-        self.assertEqual(game.play(1), 1)
-        self.assertEqual(game.play(2), 2)
-        self.assertEqual(game.play(3), 2)
-        self.assertEqual(game.play(4), 4)
+        Test the CardShuffle game API as a whole.  :py:CardShuffle.play 
+        returns the number of rounds required to complete the game.'''
+        game = cardshuffle.Shuffler(0)
+        self.assertEqual(game.play(), 0)
+        game = cardshuffle.Shuffler(1)
+        self.assertEqual(game.play(), 1)
+        game = cardshuffle.Shuffler(2)
+        self.assertEqual(game.play(), 2)
+        game = cardshuffle.Shuffler(3)
+        self.assertEqual(game.play(), 2)
+        game = cardshuffle.Shuffler(4)
+        self.assertEqual(game.play(), 3)
+        game = cardshuffle.Shuffler(5)
+        self.assertEqual(game.play(), 5)
         
 
 if __name__ == "__main__":
