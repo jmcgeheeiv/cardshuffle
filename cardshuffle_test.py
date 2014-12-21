@@ -20,7 +20,13 @@
 
 
 """
-Test the operation of the :py:class`CardShuffle` module as a whole.
+Test the operation of the :py:class`CardShuffle` module as a whole.  Also run
+the doctests on the source file(s).
+
+Run the test in the UNIX shell using the following command:
+
+    PYTHONPATH=/home/johnm/workspace/cardshuffle/:$PYTHONPATH 
+    python -m unittest cardshuffle_test
 """
 
 import unittest

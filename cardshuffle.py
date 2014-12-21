@@ -23,7 +23,7 @@ import collections
 
 class Shuffler(object):
     '''
-    Play the game according to the specification.  The number of cards is
+    Play the game according to the `specification <index.html>`_.  The number of cards is
     specified to the constructor.  The :py:func:`play` method plays the game
     and returns the number of rounds (iterations of shuffling) that were
     required:
@@ -142,7 +142,10 @@ class CardStack(object):
     A FIFO stack of numbered cards.  Cards are added to the bottom of the
     stack, and removed from the top of the stack.
     
-    If initialized with a nonzero number of cards, the cardn values are
+    In this implementation, a card is an integer, but nothing prevents
+    this from becoming an instance that has, say, a suit and a number.
+
+    If initialized with a nonzero number of cards, the card values are
     sequential:
     
     >>> stack = CardStack(3)
@@ -153,7 +156,8 @@ class CardStack(object):
     >>> stack.remove()
     2
     
-    The first card pushed to the bottom is the last card to be removed:
+    The first card added to the bottom is the first card to be removed
+    from the top:
     
     >>> stack = CardStack(0)
     >>> stack.add(0)
@@ -167,7 +171,7 @@ class CardStack(object):
     >>> stack.remove()
     2
     
-    If there are no cards, :py:func:`remove` raises an :py:class:`IndexError`
+    If no cards remain, :py:func:`remove` raises an :py:class:`IndexError`
     exception:
     
     >>> stack = CardStack(0)
@@ -175,9 +179,6 @@ class CardStack(object):
     Traceback (most recent call last):
         ...
     IndexError: pop from an empty deque
-    
-    In this implementation, a card is an integer, but nothing prevents
-    this from becoming an instance that has, say, a suit and a number.
     '''
     def __init__(self, ncards):
         self._cards = collections.deque(range(ncards))
@@ -185,16 +186,40 @@ class CardStack(object):
     def add(self, card):
         '''
         Add a card to the bottom of the stack.  In this implementation, the
-        bottom is the right side of the `cards` deque.
+        bottom is the right side of the `_cards` deque.
+    
+        >>> stack = CardStack(0)
+        >>> stack.add(0)
+        >>> stack.add(1)
+        >>> stack.add(2)
+        >>>
+        >>> stack.remove()
+        0
+        >>> stack.remove()
+        1
+        >>> stack.remove()
+        2
         '''
         self._cards.append(card)
         
     def remove(self):
         '''
         Remove a card from the top of the stack and return it.  In this
-        implementation, the top is the left side of the `cards` deque.
+        implementation, the top is the left side of the `_cards` deque.
         
         If no elements are present, this raises an IndexError.
+    
+        >>> stack = CardStack(0)
+        >>> stack.add(0)
+        >>> stack.add(1)
+        >>> stack.add(2)
+        >>>
+        >>> stack.remove()
+        0
+        >>> stack.remove()
+        1
+        >>> stack.remove()
+        2
         '''
         return self._cards.popleft()
 
