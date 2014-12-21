@@ -5,8 +5,9 @@ Specification
 
 The game goes like this:
 
-#. Start with a specified number of cards in your hand
-#. Move the top card in your hand to the bottom of the stack of cards in your hand
+   # Start with a specified number of cards in your hand
+   # Move the top card in your hand to the bottom of the stack of cards in your hand
+   
 #. Move the top card in your hand to the bottom of the stack of cards on the table
 #. After the cards in your hand are exhausted, this is one "round".
 #. Pick up the cards on the table and examine them.  If they are not in the same \
