@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cardshuffle package &mdash; cardshuffle  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="cardshuffle  documentation" href="index.html" />
+    <link rel="prev" title="Cardshuffle Documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Cardshuffle Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">cardshuffle  documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cardshuffle-package">
+<h1>cardshuffle package<a class="headerlink" href="#cardshuffle-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cardshuffle.cardshuffle">
+<span id="cardshuffle-cardshuffle-module"></span><h2>cardshuffle.cardshuffle module<a class="headerlink" href="#module-cardshuffle.cardshuffle" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cardshuffle.cardshuffle.CardStack">
+<em class="property">class </em><tt class="descclassname">cardshuffle.cardshuffle.</tt><tt class="descname">CardStack</tt><big>(</big><em>ncards</em><big>)</big><a class="reference internal" href="_modules/cardshuffle/cardshuffle.html#CardStack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cardshuffle.cardshuffle.CardStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A FIFO stack of numbered cards.  Cards are added to the bottom of the
+stack, and removed from the top of the stack.</p>
+<p>In this implementation, a card is an integer, but nothing prevents
+this from becoming an instance that has, say, a suit and a number.</p>
+<p>If initialized with a nonzero number of cards, the card values are
+sequential:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="n">CardStack</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>The first card added to the bottom is the first card to be removed
+from the top:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="n">CardStack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>If no cards remain, <a class="reference internal" href="#cardshuffle.cardshuffle.CardStack.remove" title="cardshuffle.cardshuffle.CardStack.remove"><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></a> raises an <tt class="xref py py-class docutils literal"><span class="pre">IndexError</span></tt>
+exception:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="n">CardStack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span> 
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">IndexError</span>: <span class="n">pop from an empty deque</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">IndexError</span>: <span class="n">pop from an empty deque</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cardshuffle.cardshuffle.CardStack.add">
+<tt class="descname">add</tt><big>(</big><em>card</em><big>)</big><a class="reference internal" href="_modules/cardshuffle/cardshuffle.html#CardStack.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cardshuffle.cardshuffle.CardStack.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a card to the bottom of the stack.  In this implementation, the
+bottom is the right side of the <cite>_cards</cite> deque.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="n">CardStack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cardshuffle.cardshuffle.CardStack.remove">
+<tt class="descname">remove</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cardshuffle/cardshuffle.html#CardStack.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cardshuffle.cardshuffle.CardStack.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a card from the top of the stack and return it.  In this
+implementation, the top is the left side of the <cite>_cards</cite> deque.</p>
+<p>If no elements are present, this raises an IndexError.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="n">CardStack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cardshuffle.cardshuffle.Shuffler">
+<em class="property">class </em><tt class="descclassname">cardshuffle.cardshuffle.</tt><tt class="descname">Shuffler</tt><big>(</big><em>ncards</em><big>)</big><a class="reference internal" href="_modules/cardshuffle/cardshuffle.html#Shuffler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cardshuffle.cardshuffle.Shuffler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Play the game according to the <a class="reference external" href="index.html">specification</a>.  The number of cards is
+specified to the constructor.  The <a class="reference internal" href="#cardshuffle.cardshuffle.Shuffler.play" title="cardshuffle.cardshuffle.Shuffler.play"><tt class="xref py py-func docutils literal"><span class="pre">play()</span></tt></a> method plays the game
+and returns the number of rounds (iterations of shuffling) that were
+required:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cardshuffle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span> <span class="o">=</span> <span class="n">cardshuffle</span><span class="o">.</span><span class="n">Shuffler</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span> <span class="o">=</span> <span class="n">cardshuffle</span><span class="o">.</span><span class="n">Shuffler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span> <span class="o">=</span> <span class="n">cardshuffle</span><span class="o">.</span><span class="n">Shuffler</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">game</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="go">840</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cardshuffle.cardshuffle.Shuffler.play">
+<tt class="descname">play</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cardshuffle/cardshuffle.html#Shuffler.play"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cardshuffle.cardshuffle.Shuffler.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shuffle the cards until the order of the cards in hand is the same as
+when the game commenced.  Return the number of rounds of shuffling that
+were required.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cardshuffle">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cardshuffle" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cardshuffle package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-cardshuffle.cardshuffle">cardshuffle.cardshuffle module</a></li>
+<li><a class="reference internal" href="#module-cardshuffle">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Cardshuffle Documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/cardshuffle.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Cardshuffle Documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">cardshuffle  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, John McGehee.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
