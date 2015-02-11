@@ -17,6 +17,13 @@ Source Code
 * The functional code is in cardshuffle.py 
 * The unit test is in cardshuffle_test.py
 
+Documentation
+-----------------
+
+The documentation is in ``cardshuffle/doc/_build/html/index.html``.
+
+Ordinarily, such generated files should not be added to the repository.  In this case I did since this repository is the sole deployment.
+
 Running Cardshuffle
 --------------------
 
