@@ -1,4 +1,4 @@
-Cardshuffle is a card shuffling game given to me as an interview question.
+Cardshuffle is an at-home programming test given as part of an employment interview.  It is a card game where numbered cards are shuffled in a deterministic fashion.
 
 Specification
 ---------------
