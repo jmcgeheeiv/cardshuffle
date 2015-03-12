@@ -22,7 +22,7 @@ Documentation
 
 The Cardshuffle API documentation is in `cardshuffle/doc/_build/html/index.html`.
 
-Ordinarily, such generated files should not be added to the repository.  In this case I did since this repository is the sole deployment.
+Ordinarily, such generated files should not be added to the repository.  In this case I did add them since this repository is the sole deployment.
 
 Running Cardshuffle
 --------------------
