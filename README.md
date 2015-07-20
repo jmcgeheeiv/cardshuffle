@@ -1,6 +1,6 @@
 Cardshuffle is an at-home programming test given to me as part of an employment interview.  It is a card game where numbered cards are shuffled in a deterministic fashion.
 
-Recently I have been through a few software developer interviews and I thought that this open book, at-home standardized programming test most clearly demonstrated my style.  This is an [effective tool for evaluating software developer candidates](http://sockpuppet.org/blog/2015/03/06/the-hiring-post/).
+Open book, at-home standardized programming tests are an [effective tool for evaluating software developer candidates](http://sockpuppet.org/blog/2015/03/06/the-hiring-post/).  Recently I have been through a few software developer interviews and I thought that this test reveals my style more clearly than any clever interview question.
 
 Specification
 ---------------
